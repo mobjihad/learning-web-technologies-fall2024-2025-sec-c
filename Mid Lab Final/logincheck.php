@@ -9,7 +9,16 @@
         if( empty($username) || empty($password)){
             echo "username/password! can't be empty";
 
-        }else
+        }else if(isset($_SESSION['user'])){
+
+             $userdetails = $_SESSION['user'];
+
+             if($userdetails['username']==$username && $userdetails['password']==$password){
+                echo 'Login successfull';
+
+             }
+
+        }
    
     }
 
