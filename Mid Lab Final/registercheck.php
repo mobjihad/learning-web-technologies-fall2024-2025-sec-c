@@ -1,25 +1,28 @@
 <?php
-   // session_start();
+    session_start();
     if(isset($_POST['submit'])){
     
-
         $nickname = $_POST['nickname'];
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
+        $username= $_POST['username'];
+        $password = $_POST['password'];
        
 
-        if($username == NULL || empty($password)){
-            echo "username/password! Can't be Null";
+        if(empty($username) || empty($password)){
+            
+            echo'Username Pass cannot be empty' ; 
 
-        }else if ($username == $password) {
-            //echo "valid user!";
-          //  $_SESSION['status'] = true;
-            header('location: home.php');
         }else{
-            echo "invalid user!";
+            $user = array("name"=> $nickname, "username"=>$username, "pass"=>$password);
+            $_SESSION['user'] = $user;
+            echo"User Created";
+            //sleep(2);
+            header('location: login.html');
+          
+           
         }
-    }else{
-        header('location: login.html');
-    }
+            
+
+   
+}
 
 ?>
