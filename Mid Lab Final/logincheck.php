@@ -16,6 +16,9 @@
              if($userdetails['username']==$username && $userdetails['password']==$password){
                 echo 'Login successfull';
 
+             }else{
+
+                echo'Username or Password Doesnt match';
              }
 
         }
