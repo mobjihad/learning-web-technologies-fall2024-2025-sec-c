@@ -6,18 +6,11 @@
         $password = $_REQUEST['password'];
        
 
-        if($username == null || empty($password)){
-            echo "username/password! Can't be Null";
+        if( empty($username) || empty($password)){
+            echo "username/password! can't be empty";
 
-        }else if ($username == $password) {
-            //echo "valid user!";
-            $_SESSION['status'] = true;
-            header('location: home.php');
-        }else{
-            echo "invalid user!";
-        }
-    }else{
-        header('location: login.html');
+        }else
+   
     }
 
 ?>
