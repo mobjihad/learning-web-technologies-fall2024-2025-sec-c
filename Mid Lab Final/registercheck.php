@@ -12,7 +12,7 @@
             echo'Username Pass cannot be empty' ; 
 
         }else{
-            $user = array("name"=> $nickname, "username"=>$username, "pass"=>$password);
+            $user = ["name"=> $nickname, "username"=>$username, "pass"=>$password];
             $_SESSION['user'] = $user;
             echo"User Created";
             //sleep(2);
